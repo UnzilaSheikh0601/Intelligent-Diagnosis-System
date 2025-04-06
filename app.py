@@ -13,7 +13,7 @@ description = pd.read_csv("datasets/description.csv")
 medications = pd.read_csv('datasets/medications.csv')
 
 # Load model
-svc = pickle.load(open('models/model.pkl', 'rb'))
+svc = pickle.load(open('models/svc.pkl', 'rb'))
 
 # Helper function
 def helper(dis):
