@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Care Center</title>
+    <style>
+        body {
+            background-color: #1A1A2E;
+            color: #e0e0e0;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .logo {
+            width: 50px;
+            height: 50px;
+            color: white;
+            margin-top: 0;
+            margin-left: 2px;
+        }
+
+        .myimg {
+            width: 50px;
+            height: 50px;
+            border: 2px solid white;
+            border-radius: 25px;
+        }
+
+        nav {
+            background-color: #0F3460;
+            color: white;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+            justify-content: space-evenly;
+        }
+
+        nav a {
+            display: inline-block;
+            margin-top: 20px;
+            text-decoration: none;
+            background: #065184;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 8px;
+            transition: background 0.3s;
+        }
+
+        nav a:hover {
+            background: #ff9f9f;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: #16213E;
+            color: #e0e0e0;
+            border-radius: 15px;
+            padding: 40px;
+            margin-top: 30px;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.05);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .btn-danger {
+            background-color: #ff9f9f;
+            color: black;
+            width: 100%;
+            transition: background-color 0.3s;
+        }
+
+        .btn-danger:hover {
+            background-color: #b11e37;
+            color: white;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #2c2c2c;
+            color: white;
+            border: 1px solid #555;
+            border-radius: 5px;
+        }
+
+        h1, h5 {
+            text-align: center;
+            color: #ffffff;
+        }
+
+        ul li {
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav>
+        <div class="logo">
+            <img class="myimg" src="{{ url_for('static', filename='img.png') }}" alt="Logo">
+        </div>
+        <span><strong>MediCare Center</strong></span>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Heading -->
+    <h1 class="mt-4 my-4"> MediCare Center</h1>
+
+    <!-- Main Form -->
+    <div class="container">
+        <form action="/predict" method="post">
+            <div class="form-group">
+                <label for="symptoms">Select Symptoms:</label> 
+                <input type="text" id="symptoms" name="symptoms" placeholder="Enter Symptoms...">
+            </div>
+
+            {% if message %}
+            <p>{{ message }}</p>
+            {% endif %}
+
+            <br>
+            <button type="submit" class="btn btn-danger">Predict</button>
+        </form>
+    </div>
+
+    {% if predicted_disease %}
+    <h1 class="text-center my-4 mt-4">Our AI System Results</h1>
+    <div class="container">
+        <div class="result-container">
+            <p><strong>Disease:</strong> {{ predicted_disease }}</p>
+            <p><strong>Description:</strong> {{ dis_des }}</p>
+            <p><strong>Precautions:</strong></p>
+            <ul>
+                {% for i in my_precautions %}
+                    <li>{{ i }}</li>
+                {% endfor %}
+            </ul>
+            <p><strong>Medications:</strong></p>
+            <ul>
+                {% for i in medications %}
+                    <li>{{ i }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+    {% endif %}
+
+</body>
+</html>
