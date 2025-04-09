@@ -44,28 +44,25 @@ def get_predicted_value(patient_symptoms):
 def index():
     return render_template("index.html")
 
-@app.route('/predict', methods=['GET', 'POST'])
-def home():
-    if request.method == 'POST':
-        symptoms = request.form.get('symptoms')
-        print(symptoms)
-        if symptoms == "Symptoms":
-            message = "Please either write symptoms or you have written misspelled symptoms"
-            return render_template('index.html', message=message)
-        else:
-            user_symptoms = [s.strip() for s in symptoms.split(',')]
-            user_symptoms = [symptom.strip("[]' ") for symptom in user_symptoms]
-            predicted_disease = get_predicted_value(user_symptoms)
-            dis_des, precautions, medications = helper(predicted_disease)
+@app.route('/predict', methods=['POST'])
+def predict():
+    try:
+        user_symptoms = request.form['symptoms'].split(',')
+        user_symptoms = [s.strip() for s in user_symptoms]
 
-            my_precautions = []
-            for i in precautions[0]:
-                my_precautions.append(i)
+        predicted_disease = get_predicted_value(user_symptoms)
+        dis_des, precautions, medications = helper(predicted_disease)
 
-            return render_template('index.html', predicted_disease=predicted_disease, dis_des=dis_des,
-                                   my_precautions=my_precautions, medications=medications)
+        my_precautions = [i for i in precautions[0]]
 
-    return render_template('index.html')
+        return render_template('index.html',
+                               predicted_disease=predicted_disease,
+                               dis_des=dis_des,
+                               my_precautions=my_precautions,
+                               medications=medications)
+    except Exception as e:
+        print("Error:", e)
+        return render_template('index.html', message="Something went wrong. Please check the symptoms and try again.")
 
 @app.route('/about')
 def about():
