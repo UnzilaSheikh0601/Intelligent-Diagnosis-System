@@ -1,0 +1,113 @@
+body {
+    background-color: #b0c4b1;
+    color: black;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.logo {
+    width: 50px;
+    height: 50px;
+    color: white;
+    margin-top: 0;
+    margin-left: 2px;
+}
+
+.myimg {
+    width: 50px;
+    height: 50px;
+    border: 2px solid white;
+    border-radius: 25px;
+}
+
+nav {
+    background-color: #edafb8;
+    color: black;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.nav-title{
+    color: #4a5759;
+    font-size: 30px;
+    padding-top: 25px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    justify-content: space-around;
+}
+
+nav a {
+    display: inline-block;
+    margin-top: 20px;
+    text-decoration: none;
+    background: #dedbd2;
+    color: black;
+    padding: 10px 20px;
+    border-radius: 8px;
+    transition: background 0.3s;
+}
+
+nav a:hover {
+    background: #FBF5E5;
+    color: black;
+}
+
+.container {
+    max-width: 800px;
+    margin: auto;
+    background: #f7e1d7;
+    color: black;
+    border-radius: 15px;
+    padding: 40px;
+    margin-top: 30px;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.05);
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+}
+
+.btn-danger {
+    background-color: #edafb8;
+    color: black;
+    width: 100%;
+    transition: background-color 0.3s;
+}
+
+.btn-danger:hover {
+    background-color: #4a5759;
+    color: white;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #2c2c2c;
+    color: white;
+    border: 1px solid #555;
+    border-radius: 5px;
+}
+
+h1, h5 {
+    text-align: center;
+    color: #4a5759;
+}
+
+ul li {
+    margin-bottom: 5px;
+}

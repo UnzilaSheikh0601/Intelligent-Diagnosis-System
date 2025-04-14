@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MediCare Center</title>
-    <style>
+    <link rel="stylesheet" href="static/styles.css">
+    <!-- <style>
         body {
-            background-color: #212121;
-            color: #e0e0e0;
+            background-color: #b0c4b1;
+            color: black;
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
@@ -29,8 +30,8 @@
         }
 
         nav {
-            background-color: #A35C7A;
-            color: white;
+            background-color: #edafb8;
+            color: black;
             padding: 10px;
             display: flex;
             align-items: center;
@@ -48,8 +49,8 @@
             display: inline-block;
             margin-top: 20px;
             text-decoration: none;
-            background: #C890A7;
-            color: white;
+            background: #dedbd2;
+            color: black;
             padding: 10px 20px;
             border-radius: 8px;
             transition: background 0.3s;
@@ -63,8 +64,8 @@
         .container {
             max-width: 800px;
             margin: auto;
-            background: #A35C7A;
-            color: #e0e0e0;
+            background: #f7e1d7;
+            color: black;
             border-radius: 15px;
             padding: 40px;
             margin-top: 30px;
@@ -84,15 +85,15 @@
         }
 
         .btn-danger {
-            background-color: #C890A7;
-            color: #212121;
+            background-color: #edafb8;
+            color: black;
             width: 100%;
             transition: background-color 0.3s;
         }
-
+        
         .btn-danger:hover {
-            background-color: #FBF5E5;
-            color: black;
+            background-color: #4a5759;
+            color: white;
         }
 
         input[type="text"] {
@@ -112,7 +113,7 @@
         ul li {
             margin-bottom: 5px;
         }
-    </style>
+    </style> -->
 </head>
 <body>
 
@@ -121,7 +122,7 @@
         <div class="logo">
             <img class="myimg" src="{{ url_for('static', filename='img.png') }}" alt="Logo">
         </div>
-        <span><strong>MediCare Center</strong></span>
+        <span class="nav-title"><strong>MediCare Center</strong></span>
         <ul>
             <li><a href="#">Home</a></li>
             <li><a href="/about">About</a></li>
@@ -130,7 +131,7 @@
     </nav>
 
     <!-- Main Heading -->
-    <h1 class="mt-4 my-4"> MediCare Center</h1>
+    <h1 class="mt-4 my-4"> Predict Disease and get Medicine Recommendation</h1>
 
     <!-- Main Form -->
     <div class="container">
