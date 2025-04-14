@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -115,6 +116,7 @@
         }
     </style> -->
 </head>
+
 <body>
 
     <!-- Navbar -->
@@ -137,7 +139,7 @@
     <div class="container">
         <form action="/predict" method="post">
             <div class="form-group">
-                <label for="symptoms">Select Symptoms:</label> 
+                <label for="symptoms">Select Symptoms:</label>
                 <input type="text" id="symptoms" name="symptoms" placeholder="Enter Symptoms...">
             </div>
 
@@ -156,21 +158,30 @@
         <div class="result-container">
             <p><strong>Disease:</strong> {{ predicted_disease }}</p>
             <p><strong>Description:</strong> {{ dis_des }}</p>
-            <p><strong>Precautions:</strong></p>
-            <ul>
-                {% for i in my_precautions %}
-                    <li>{{ i }}</li>
-                {% endfor %}
-            </ul>
             <p><strong>Medications:</strong></p>
             <ul>
                 {% for i in medications %}
-                    <li>{{ i }}</li>
+                <li>{{ i }}</li>
                 {% endfor %}
             </ul>
+            <p><strong>Precautions:</strong></p>
+            <ul>
+                {% for i in my_precautions %}
+                <li>{{ i }}</li>
+                {% endfor %}
+            </ul>
+
         </div>
     </div>
     {% endif %}
 
+    <footer>
+        <div class="foot-con">
+            <p>&copy; 2025 MediCare Centre. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+
 </body>
+
 </html>

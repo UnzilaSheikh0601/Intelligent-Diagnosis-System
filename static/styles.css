@@ -3,6 +3,7 @@ body {
     color: black;
     font-family: Arial, sans-serif;
     margin: 0;
+    margin-bottom: 100px;
     padding: 0;
 }
 
@@ -28,9 +29,10 @@ nav {
     display: flex;
     align-items: center;
     justify-content: space-around;
+    box-shadow: 0 -2px 5px #f35d74;
 }
 
-.nav-title{
+.nav-title {
     color: #4a5759;
     font-size: 30px;
     padding-top: 25px;
@@ -67,7 +69,7 @@ nav a:hover {
     border-radius: 15px;
     padding: 40px;
     margin-top: 30px;
-    box-shadow: 0 0 15px rgba(255, 255, 255, 0.05);
+    box-shadow: 0 0 15px #edafb8;
 }
 
 .btn {
@@ -97,17 +99,31 @@ nav a:hover {
 input[type="text"] {
     width: 100%;
     padding: 10px;
-    background-color: #2c2c2c;
+    background-color: #4a5759;
     color: white;
     border: 1px solid #555;
     border-radius: 5px;
 }
 
-h1, h5 {
+h1,
+h5 {
     text-align: center;
     color: #4a5759;
 }
 
 ul li {
     margin-bottom: 5px;
+}
+
+footer {
+    position: fixed;
+    margin-top: 30px;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #4a5759;
+    color: #fff;
+    padding: 15px 0;
+    text-align: center;
+    box-shadow: 0 -2px 5px #edafb8;
 }
