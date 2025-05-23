@@ -24,6 +24,7 @@ def helper(dis):
     pre = [col for col in pre.values]
 
     med = medications[medications['Disease'] == dis]['Medication']
+    
     med = [med for med in med.values]
 
     return desc, pre, med
@@ -44,25 +45,28 @@ def get_predicted_value(patient_symptoms):
 def index():
     return render_template("index.html")
 
-@app.route('/predict', methods=['POST'])
+@app.route('/predict', methods=['GET', 'POST'])
 def predict():
-    try:
-        user_symptoms = request.form['symptoms'].split(',')
-        user_symptoms = [s.strip() for s in user_symptoms]
+    if request.method == 'POST':
+        try:
+            user_symptoms = request.form['symptoms'].split(',')
+            user_symptoms = [s.strip() for s in user_symptoms]
 
-        predicted_disease = get_predicted_value(user_symptoms)
-        dis_des, precautions, medications = helper(predicted_disease)
+            predicted_disease = get_predicted_value(user_symptoms)
+            dis_des, precautions, medications = helper(predicted_disease)
 
-        my_precautions = [i for i in precautions[0]]
+            my_precautions = [i for i in precautions[0]]
 
-        return render_template('index.html',
-                               predicted_disease=predicted_disease,
-                               dis_des=dis_des,
-                               my_precautions=my_precautions,
-                               medications=medications)
-    except Exception as e:
-        print("Error:", e)
-        return render_template('index.html', message="Something went wrong. Please check the symptoms and try again.")
+            return render_template('prediction.html',
+                                   predicted_disease=predicted_disease,
+                                   dis_des=dis_des,
+                                   my_precautions=my_precautions,
+                                   medications=medications)
+        
+        except Exception as e:
+            print("Error:", e)
+            return render_template('prediction.html', message="Something went wrong. Please check the symptoms and try again.")
+    return render_template("prediction.html")
 
 @app.route('/about')
 def about():

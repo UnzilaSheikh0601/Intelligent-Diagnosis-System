@@ -1,110 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About | MediCare Center</title>
     <link rel="stylesheet" href="static/styles.css">
-
-    <!-- <style>
-        body {
-            background-color: #b0c4b1;
-            color: black;
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-
-        .logo {
-            width: 50px;
-            height: 50px;
-            color: white;
-            margin-top: 0;
-            margin-left: 2px;
-        }
-
-        .myimg {
-            width: 50px;
-            height: 50px;
-            border: 2px solid white;
-            border-radius: 25px;
-        }
-
-        nav {
-            background-color: #edafb8;
-            color: black;
-            padding: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: space-around;
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 30px;
-            justify-content: space-around;
-        }
-
-        nav a {
-            display: inline-block;
-            margin-top: 20px;
-            text-decoration: none;
-            background: #dedbd2;
-            color: black;
-            padding: 10px 20px;
-            border-radius: 8px;
-            transition: background 0.3s;
-        }
-
-        nav a:hover {
-            background: #FBF5E5;
-            color: black;
-        }
-
-        .container {
-            max-width: 800px;
-            margin: auto;
-            background: #f7e1d7;
-            color: #5f3d4b;
-            border-radius: 15px;
-            padding: 40px;
-            margin-top: 30px;
-            box-shadow: 0 0 15px rgba(255, 255, 255, 0.05);
-        }
-
-        h1, p {
-            text-align: center;
-        }
-    </style> -->
 </head>
+
 <body>
 
-    <!-- Navbar -->
-    <nav>
-        <div class="logo">
-            <img class="myimg" src="{{ url_for('static', filename='img.png') }}" alt="Logo">
+    <div class="img-box">
+        <div class="bg-img">
+            <img width="100%" src="static/bg.png" alt="BG-img">
         </div>
-        <span class="nav-title"><strong>MediCare Center</strong></span>
-        <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/about">About</a></li>
-            <li><a href="/contact">Contact</a></li>
-        </ul>
-    </nav>
-
-    <!-- About Content -->
-    <h1>About Us</h1>
-    <div class="container">
-        <p>
-            MediCare Center is a smart health prediction platform that utilizes machine learning
-            to analyze symptoms and provide probable disease outcomes. This helps individuals take
-            timely action by knowing their condition and following the suggested precautions and medications.
-        </p>
-        <p>
-            Our mission is to empower people with AI-based preliminary health insights to improve awareness
-            and bridge the gap between symptoms and consultation.
-        </p>
+        <!-- Navbar -->
+        <nav>
+            <div class="logo">
+                <img class="logo-img" src="{{ url_for('static', filename='img.png') }}" alt="Logo">
+                <span class="nav-title"><strong>MediCare Center</strong></span>
+            </div>
+            <span id="nav-search"><a href="/predict"><strong>Start Diagnosis</strong></a></span>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/contact">Contact</a></li>
+            </ul>
+        </nav>
+        <!-- About Content -->
+        <main>
+        <h1>About Us</h1>
+        <div class="container extra">
+            <p>
+                MediCare Center is a smart health prediction platform that utilizes machine learning
+                to analyze symptoms and provide probable disease outcomes. This helps individuals take
+                timely action by knowing their condition and following the suggested precautions and medications.
+            </p>
+            <p>
+                Our mission is to empower people with AI-based preliminary health insights to improve awareness
+                and bridge the gap between symptoms and consultation.
+            </p>
+        </div>
+        </main>
     </div>
 
     <footer>
@@ -115,4 +52,5 @@
 
 
 </body>
+
 </html>

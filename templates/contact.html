@@ -1,119 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact | MediCare Center</title>
     <link rel="stylesheet" href="static/styles.css">
-
-    <!-- <style>
-        body {
-            background-color: #b0c4b1;
-            color: black;
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-
-        .logo {
-            width: 50px;
-            height: 50px;
-            color: white;
-            margin-top: 0;
-            margin-left: 2px;
-        }
-
-        .myimg {
-            width: 50px;
-            height: 50px;
-            border: 2px solid white;
-            border-radius: 25px;
-        }
-
-        nav {
-            background-color: #edafb8;
-            color: black;
-            padding: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: space-around;
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 30px;
-            justify-content: space-around;
-        }
-
-        nav a {
-            display: inline-block;
-            margin-top: 20px;
-            text-decoration: none;
-            background: #dedbd2;
-            color: black;
-            padding: 10px 20px;
-            border-radius: 8px;
-            transition: background 0.3s;
-        }
-
-        nav a:hover {
-            background: #FBF5E5;
-            color: black;
-        }
-
-        .container {
-            max-width: 800px;
-            margin: auto;
-            background: #f7e1d7;
-            color: #5f3d4b;
-            border-radius: 15px;
-            padding: 40px;
-            margin-top: 30px;
-            box-shadow: 0 0 15px rgba(255, 255, 255, 0.05);
-        }
-
-        h1 {
-            text-align: center;
-        }
-
-        .contact-details {
-            font-size: 18px;
-            line-height: 2;
-        }
-    </style> -->
 </head>
+
 <body>
 
-    <!-- Navbar -->
-    <nav>
-        <div class="logo">
-            <img class="myimg" src="{{ url_for('static', filename='img.png') }}" alt="Logo">
+    <div class="img-box">
+        <div class="bg-img">
+            <img width="100%" src="static/bg.png" alt="BG-img">
         </div>
-        <span class="nav-title"><strong>MediCare Center</strong></span>
-        <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/about">About</a></li>
-            <li><a href="/contact">Contact</a></li>
-        </ul>
-    </nav>
-
-    <!-- Contact Content -->
-    <h1>Contact Us</h1>
-    <div class="container">
-        <div class="contact-details">
-            <p>Email: support@medicarecenter.com</p>
-            <p>Phone: +91-9876543210</p>
-            <p>Address: AI Campus, Innovation Street, India</p>
-            <p>We are here to assist you 24/7. Don’t hesitate to reach out for queries or feedback!</p>
-        </div>
+        <!-- Navbar -->
+        <nav>
+            <div class="logo">
+                <img class="logo-img" src="{{ url_for('static', filename='img.png') }}" alt="Logo">
+                <span class="nav-title"><strong>MediCare Center</strong></span>
+            </div>
+            <span id="nav-search"><a href="/predict"><strong>Start Diagnosis</strong></a></span>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/contact">Contact</a></li>
+            </ul>
+        </nav>
+        <!-- Contact Content -->
+        <main>
+            <h1>Contact Us</h1>
+            <div class="container extra">
+                <div class="contact-details">
+                    <p>Email: support@medicarecenter.com</p>
+                    <p>Phone: +91-9876543210</p>
+                    <p>Address: AI Campus, Innovation Street, India</p>
+                    <p>We are here to assist you 24/7. Don't hesitate to reach out for queries or feedback!</p>
+                </div>
+            </div>
+        </main>
     </div>
 
+
     <footer>
-        <div class="foot-con">
+        <div>
             <p>&copy; 2025 MediCare Centre. All Rights Reserved.</p>
         </div>
     </footer>
 
 </body>
+
 </html>
